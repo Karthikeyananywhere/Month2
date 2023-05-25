@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+	version="4.0">
+	<display-name>hotelBooking</display-name>
+	<welcome-file-list>
+		<welcome-file>welcome.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>com.fc.hotelBooking.servlet.ViewRooms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/viewer</url-pattern>
+	</servlet-mapping>
+
+
+	<filter>
+		<filter-name>Filter</filter-name>
+		<filter-class>com.fc.hotelBooking.filter.MyFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+
+		<filter-name>Filter</filter-name>
+		<url-pattern>/chennai</url-pattern>
+		<url-pattern>/Coimbatore</url-pattern>
+		<url-pattern>/Madurai</url-pattern>
+	</filter-mapping>
+
+	<!-- <servlet> <servlet-name>Chennai</servlet-name> <servlet-class>com.fc.hotelBooking.servlet.Chennai</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>Chennai</servlet-name> <url-pattern>/chennai</url-pattern> 
+		</servlet-mapping> -->
+</web-app>
